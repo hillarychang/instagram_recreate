@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/static/view_post.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+<body>
+
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <div class = "full">
+        <div class = "first">
+            <h1>Posts</h1>
+        </div>
+        <div class = "links">
+            <h1>Welcome {{user.first_name}}</h1>
+            <div class = "second">
+                <!-- user is from controller_users.py -->
+                <a href = "/showUser">Dashboard</a>
+                <a href = "/log_out">Logout</a>
+            </div>
+        </div>
+    </div>
+    <hr> 
+
+
+    <div class = "content">
+        <h1>{{post.text}} </h1> 
+        <img src = "{{post.image_path}}" alt="">
+        <p>Posted by {{spec_post.poster.first_name}}</p>
+        <!-- ^"post.user.first_name" -->
+        <!-- ^change: FIX user.first_name to make it user who posted -->
+        <!-- have to change post.get_one similar to post.get_all -->
+        <p>Created at {{post.created_at}}</p>
+
+
+
+    <!-- START EDITING -->
+        {% for one_user in post_user.likedUsers %}
+            {% if one_user.first_name != None %}    
+                <p>Liked by: {{one_user.first_name}} {{one_user.last_name}}</p>   
+            {% endif %}
+        {% endfor %}
+
+
+        {% if post.user_id != user.id %} 
+            {% if curr_status == False %}
+                <a href = "/create_like/{{post.id}}">Like this post?</a> 
+            {% elif curr_status == True %}
+                <a href = "/delete_like/{{post.id}}">Unlike this post?</a> 
+            {% endif %} 
+        {% endif %} 
+        <hr>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

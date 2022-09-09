@@ -1,0 +1,48 @@
+
+.full{
+    padding: 50px 50px 10px 50px;
+}
+
+img {  
+    width: auto;
+    max-height: 400px;  
+    max-width:400px;
+    height: auto;  
+    }  
+
+.comments
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+
+.commenter_name{
+    font-weight: bold;
+}
+
+
+.content{
+    text-align: center;
+}
+
+.full{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+
+.links{
+    align-content: space-between;
+}
+
+
+.whole{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}

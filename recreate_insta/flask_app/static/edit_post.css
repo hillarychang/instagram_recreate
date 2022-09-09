@@ -1,0 +1,43 @@
+/* .top{
+    padding:10px;
+}
+
+.first-page{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+} */
+
+input[type=text]{
+    margin-top: 20px;
+}
+
+
+button[type=submit]{
+    margin-top: 20px;
+}
+
+
+.full{
+    padding: 50px 50px 10px 50px;
+}
+
+
+.full{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+
+.content{
+    text-align: center;
+}
+
+
+.whole{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}

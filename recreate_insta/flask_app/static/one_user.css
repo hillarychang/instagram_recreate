@@ -1,0 +1,31 @@
+/* .top{
+    padding:10px;
+}
+
+.first-page{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+} */
+
+
+.content{
+    text-align: center;
+}
+
+.full{
+    padding: 50px 50px 10px 50px;
+}
+
+.full{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.whole{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}

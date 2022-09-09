@@ -1,0 +1,27 @@
+.full{
+    padding: 50px 50px 10px 50px;
+}
+
+.content{
+    text-align: center;
+}
+
+.full{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+
+.links{
+
+
+}
+
+
+.whole{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
