@@ -1,0 +1,37 @@
+/* .top{
+    padding:10px;
+}
+
+.first-page{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+} */
+
+
+img {  
+    width: auto;
+    max-height: 400px;  
+    max-width:400px;
+    height: auto;  
+}  
+.content{
+    text-align: center;
+}
+
+.full{
+    padding: 50px 50px 10px 50px;
+}
+
+.full{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.whole{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
