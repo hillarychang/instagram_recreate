@@ -77,7 +77,6 @@ class Post: # model the class after the user table from  database
             }
 
             print("herearetheresults",join_data)
-
             post.comment.append( join_data ) #call post class, then call Post constructor
         # print("POST OBJECT",post.comment)
         # for i in post.comment:

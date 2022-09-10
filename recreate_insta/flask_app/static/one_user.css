@@ -9,6 +9,12 @@
 } */
 
 
+img {  
+    width: auto;
+    max-height: 400px;  
+    max-width:400px;
+    height: auto;  
+}  
 .content{
     text-align: center;
 }

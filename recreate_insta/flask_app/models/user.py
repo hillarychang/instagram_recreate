@@ -33,6 +33,8 @@ class User: # model the class after the user table from the database
 
         self.numFollower = 0
         self.numPost = 0
+        self.following_id_list = []
+
         self.followers = []
         self.following = []
         self.posts=[] # one to many
@@ -85,8 +87,9 @@ class User: # model the class after the user table from the database
                 "created_at" : row_from_db["u2.created_at"],
                 "updated_at" : row_from_db["u2.updated_at"]
             }
+            user_info.following_id_list.append(row_from_db["u2.id"])
             user_info.following.append(User( follower_data ) ) #calls User constructor method
-
+            print("HEARTBREAKANNIVERSARY",user_info.following_id_list)
         return user_info #get a list of users this user is following 
 
 

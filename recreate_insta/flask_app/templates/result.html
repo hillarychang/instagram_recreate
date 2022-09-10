@@ -36,22 +36,14 @@
     </div>
     <hr> 
 
-<!-- comments -->
-    <!-- {% for i in comment_post.comment %}
-        <p>comment: {{i['comment']}}</p>
-        <p>by: {{i['first_name']}}</p>
-    {% endfor %} -->
 
 
 
     <div class = "content">
     {% for one_post in all_posts %}
 
-        {#% if len(users.following) !=0 %#}
-<!-- edit this -->
-            {% for i in users.following %}
-                <p>this: {{ users.following[0].id }}</p>
-                {% if one_post.user_id == users.id or one_post.user_id == i.id %}
+
+                {% if one_post.user_id == users.id %} 
                 
                     <p>Posted by: <a href = "/profile/{{one_post.user_id}}">{{one_post.user.first_name}} {{one_post.user.last_name}} </a> </p>
                     <h3>{{one_post.text}}</h3>
@@ -86,9 +78,48 @@
 
             
                 {% endif %} 
+
+                
+                {% if one_post.user_id in list_id %}
+
+                    <p>Posted by: <a href = "/profile/{{one_post.user_id}}">{{one_post.user.first_name}} {{one_post.user.last_name}} </a> </p>
+                    <h3>{{one_post.text}}</h3>
+                    <img src = "{{one_post.image_path}}" class="rounded" alt="">
+                    <p>Amount of likes: {{one_post.numLike}}</p>
+
+                    {% for i in one_post.comment %}
+                    <div class = "comments">
+                        <p><span class="commenter_name">{{i['first_name']}}</span> commented: {{i['comment']}} </p>   
+                        {% if i['user_id'] == users.id %}
+                            <a href = "/delete_comment/{{i['comment_id']}}">Delete</a>          
+                        {% endif %}
+                    </div>
+                    {% endfor %} 
+
+
+                    <form action="/comment/{{one_post.id}}" method="POST">
+                        <label for="comment">Comment:</label>
+                        <input type="text" name="comment">                
+                        <button type="submit">Post</button>
+                    </form> 
+
+                    {% if users.id == one_post.user_id %}
+                        <a href = "/edit/{{one_post.id}}">Edit</a>
+                        <a href = "/delete/{{one_post.id}}">Delete</a>          
+                    {% endif %}
+                    
+                    <a href = "/show_post_users/{{one_post.id}}">View Post</a>
+                    <hr> 
+
+                {% endif %} 
+
+
+
+
+
             {% endfor %}
-        {#% endif %#}
-    {% endfor %}
+        
+        
     </div>
 
 

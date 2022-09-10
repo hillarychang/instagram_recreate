@@ -37,6 +37,7 @@
 
     <div class="content">
         {% for one_post in users.posts %}
+            <img src = "{{one_post.image_path}}" alt=""><br>
             {{one_post.text}}
             <p>Created at: {{one_post.created_at}}</p>
             <p>Actions:</p>
